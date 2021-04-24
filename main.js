@@ -83,7 +83,9 @@ function expandMenu() {
         return expandMenuIndicator = true;
     } else {
         document.getElementsByTagName("nav")[0].classList.remove("responsive");
-        removeBackgroundColor();
+        if (window.scrollY < scrollPixels) {
+            removeBackgroundColor();
+        }
         return expandMenuIndicator = false;
     }
 }
